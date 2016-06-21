@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <meta name="description" content="@section('metadesc') page de garde @show">
+    <title>@section('titrePage') backoffice @show</title>
 
     <!-- Bootstrap -->
+    @section('css')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    @show
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,10 +32,11 @@
                  <div class="container-fluid">
                    <ul class="nav navbar-nav">
                       <li ><a href="{{url('/')}}"><span id="projet"> Projet L9<i class=""></i></span></a></li>
-                      <li><a href="{{url('/')}}"><span> Home<i class="glyphicon glyphicon-home"></i></span></a></li>
-                      <li><a href="{{url('faq')}}"><span> faq<i class="glyphicon glyphicon-question-sign"></i></span></a></li>
-                      <li><a href="{{url('about-us')}}"><span> A propos<i class="glyphicon glyphicon-info-sign"></i></span></a></li>
-                      <li><a href="{{url('contact')}}"><span> contact<i class="glyphicon glyphicon-home"></i></span></a></li>
+                      <li><a href="{{url('/')}}"><span> Home <i class="glyphicon glyphicon-home"></i></span></a></li>
+                      <li><a href="{{url('faq')}}"><span> faq <i class="glyphicon glyphicon-question-sign"></i></span></a></li>
+                      <li><a href="{{route('about')}}"><span> A propos <i class="glyphicon glyphicon-info-sign"></i></span></a></li>
+                      <li><a href="{{url('contact')}}"><span> contact <i class="glyphicon glyphicon-home"></i></span></a></li>
+                      <li><a href="{{url('ilsparlentdenous')}}"><span> Nous <i class="glyphicon glyphicon-eye-open"></i></span></a></li>
                       <li role="separator" class="divider"></li>
                    </ul>
                    <form class="navbar-form navbar-right" role="search">
@@ -46,8 +49,16 @@
               </nav>
             </div>
 
+            <ol class="breadcrumb">
+              <li><a href="{{route('welcome')}}">Home</a></li>
+              @section('arianne') @show
+            </ol>
+
             @section('content')
             @show
+
+
+
 
         <hr />
         <footer>
@@ -55,10 +66,11 @@
         </footer>
 
       </header>
-
+      @section('js')
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    @show
   </body>
 </html>

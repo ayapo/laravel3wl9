@@ -11,18 +11,18 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/',['as' =>'welcome', function () {
     return view('welcome');
-});
+}]);
 
 
 //Route::get permet de créer une route en GET
 //1ere paramètre c'est l'URI
 //2eme paramètre est une fonction anonyme
-Route::get('/about-us', function(){
+Route::get('/about-us',['as' =>'about', function(){
   //derrière l'uri, on retourne vue
   return view('about');
-});
+}]);
 
 Route::get('/contact', function(){
   //derrière l'uri, on retourne vue
@@ -32,4 +32,26 @@ Route::get('/contact', function(){
 Route::get('/faq', function(){
   //derrière l'uri, on retourne vue
   return view('faq');
+});
+
+Route::get('/concept', function(){
+  //derrière l'uri, on retourne vue
+  return view('concept');
+});
+
+Route::get('/ilsparlentdenous', function(){
+  //derrière l'uri, on retourne vue
+  return view('ilsparlentdenous');
+});
+
+Route::group([
+  'prefix'=>'movies'], function(){
+    Route::get('/index', ['as'=> 'movies.index', 'uses'=>'MoviesController@index']);
+
+    Route::get('/creer', ['as'=> 'movies.creer', 'uses'=>'MoviesController@index']);
+
+    Route::get('/editer', ['as'=> 'movies.editer', 'uses'=>'MoviesController@index']);
+
+    Route::get('/voir', ['as'=> 'movies.voir', 'uses'=>'MoviesController@index']);
+
 });
