@@ -48,7 +48,7 @@
                 </div>
               </nav>
             </div>
-
+              
             <ol class="breadcrumb">
               <li><a href="{{route('welcome')}}">Home</a></li>
               @section('arianne') @show

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Models\Categories;
+use App\Http\Models\Directors;
 use App\Http\Controllers\Controller;
 
 
 /**
- * Class CategoriesController
+ * Class MoviesController
  */
-class CategoriesController extends Controller
+class DirectorsController extends Controller
 {
 
   public function index(){
@@ -17,10 +17,10 @@ class CategoriesController extends Controller
 
 //Je récupère la liste de mes films
 //depuis le Model Movies
-  $categories = Categories::allCategories();
+  $directors = directors::allDirectors();
 
 //J'appelle ma vue en lui transférant tous mes films
-    return view('categories/index', ['categories'=> $categories]);
+    return view('directors/index', ['directors'=> $directors]);
 
   }
 

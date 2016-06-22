@@ -44,27 +44,81 @@ Route::get('/ilsparlentdenous', function(){
   return view('ilsparlentdenous');
 });
 
+
+//group de la categories movies
 Route::group([
   'prefix'=>'movies'], function(){
     Route::get('/index', ['as'=> 'movies.index', 'uses'=>'MoviesController@index']);
 
+    Route::get('/creer', ['as'=> 'movies.creer', 'uses'=>'MoviesController@creer']);
 
-    Route::get('/creer', ['as'=> 'movies.creer', 'uses'=>'MoviesController@index']);
+    //Route post pour store
+    Route::post('/store',['as'=> 'movies.store', 'uses'=>'MoviesController@store']);
 
-    Route::get('/editer', ['as'=> 'movies.editer', 'uses'=>'MoviesController@index']);
+    Route::get('/editer', ['as'=> 'movies.editer', 'uses'=>'MoviesController@editer']);
 
-    Route::get('/voir', ['as'=> 'movies.voir', 'uses'=>'MoviesController@index']);
+    Route::get('/voir', ['as'=> 'movies.voir', 'uses'=>'MoviesController@voir']);
 
-});
-
-Route::group([
-  'prefix'=>'categories'], function(){
-    Route::get('/index', ['as'=> 'categories.index', 'uses'=>'CategoriesController@creer']);
-
-    Route::get('/creer', ['as'=> 'categories.creer', 'uses'=>'CategoriesController@creer']);
-
-    Route::get('/editer', ['as'=> 'categories.editer', 'uses'=>'CategoriesController@creer']);
-
-    Route::get('/voir', ['as'=> 'categories.voir', 'uses'=>'CategoriesController@creer']);
 
 });
+
+//
+  //                                GROUP CATEGORIE
+  //
+  Route::group(['prefix' => 'categories'], function () {
+    Route::get('/index', [
+      'as' => 'categories.index',
+      'uses' => 'CategoriesController@index'
+    ]);
+    Route::get('/creer', [
+      'as' => 'categories.creer',
+      'uses' => 'CategoriesController@creer'
+    ]);
+    Route::get('/editer', [
+      'as' => 'categories.editer',
+      'uses' => 'CategoriesController@editer'
+    ]);
+    Route::get('/voir', [
+      'as' => 'categories.voir',
+      'uses' => 'CategoriesController@voir'
+    ]);
+  });
+//GROUPE ACTORS
+  Route::group(['prefix' => 'actors'], function () {
+     Route::get('/index', [
+       'as' => 'actors.index',
+       'uses' => 'ActorsController@index'
+     ]);
+     Route::get('/creer', [
+       'as' => 'actors.creer',
+       'uses' => 'ActorsController@creer'
+     ]);
+     Route::get('/editer', [
+       'as' => 'actors.editer',
+       'uses' => 'ActorsController@editer'
+     ]);
+     Route::get('/voir', [
+       'as' => 'actors.voir',
+       'uses' => 'ActorsController@voir'
+     ]);
+   });
+
+   //GROUPE DIRECTORS
+   Route::group(['prefix' => 'directors'], function () {
+      Route::get('/index', [
+        'as' => 'directors.index',
+        'uses' => 'DirectorsController@index'
+      ]);
+      Route::get('/creer', [
+        'as' => 'directors.creer',
+        'uses' => 'DirectorsController@creer'
+      ]);
+      Route::get('/editer', [
+        'as' => 'directors.editer',
+        'uses' => 'DirectorsController@editer'
+      ]);
+      Route::get('/voir', [
+        'as' => 'directors.voir',
+        'uses' => 'DirectorsController@voir'
+      ]);
+    });
