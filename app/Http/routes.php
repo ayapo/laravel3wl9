@@ -48,10 +48,23 @@ Route::group([
   'prefix'=>'movies'], function(){
     Route::get('/index', ['as'=> 'movies.index', 'uses'=>'MoviesController@index']);
 
+
     Route::get('/creer', ['as'=> 'movies.creer', 'uses'=>'MoviesController@index']);
 
     Route::get('/editer', ['as'=> 'movies.editer', 'uses'=>'MoviesController@index']);
 
     Route::get('/voir', ['as'=> 'movies.voir', 'uses'=>'MoviesController@index']);
+
+});
+
+Route::group([
+  'prefix'=>'categories'], function(){
+    Route::get('/index', ['as'=> 'categories.index', 'uses'=>'CategoriesController@creer']);
+
+    Route::get('/creer', ['as'=> 'categories.creer', 'uses'=>'CategoriesController@creer']);
+
+    Route::get('/editer', ['as'=> 'categories.editer', 'uses'=>'CategoriesController@creer']);
+
+    Route::get('/voir', ['as'=> 'categories.voir', 'uses'=>'CategoriesController@creer']);
 
 });

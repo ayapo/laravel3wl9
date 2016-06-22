@@ -2,27 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Models\Movies;
+use App\Http\Models\Categories;
 use App\Http\Controllers\Controller;
 
 
 /**
  * Class MoviesController
  */
-class MoviesController extends Controller
+class CategoriesController extends Controller
 {
 
-  public function index(){
+  public function creer(){
 //interoger ma BDD avec le Model
 
 //Je récupère la liste de mes films
 //depuis le Model Movies
-  $movies = Movies::allMovies();
+  $categories = Categorie::allCategories();
 
 //J'appelle ma vue en lui transférant tous mes films
-    return view('movies/index', ['movies'=> $movies]);
+    return view('categories/creer', ['categories'=> $categories]);
 
   }
+
 
 }
 

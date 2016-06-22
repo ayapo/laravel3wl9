@@ -26,5 +26,6 @@
 </table>
 
 @section('arianne')
+@parent
   <li><a href="{{route('movies.index')}}">index</a></li>
 @endsection
