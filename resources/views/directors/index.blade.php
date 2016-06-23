@@ -1,31 +1,40 @@
 @extends('layout')
 
 @section('content')
-<h1> <small>Liste de mes catégories</small></h1>
+<h1> <small>Liste de mes réalisateurs</small></h1>
 
 
 
-<table class="table">
-  <tbody>
-  @foreach($categories as $key => $categorie)
+<table class="table table-responsive table-bordered table-striped">
+  <thead>
     <tr>
-      <td><a href="#">{{$categorie->id}}</a></td>
-      <td><img class="col-md-4 img-responsive img-thumbnail" src="{{$categorie->image}}" /></td>
-      <td><h4><a>{{$categorie->title}}</a></h4></td>
-      <td style="word-break: break-all"><p><i>{{strip_tags($categorie->description)}}</i></td>
-      <td>
-        <a href="#" class="btn btn-xs btn-primary"><span class="fa fa-search">Voir</span></a>
-        <a href="#" class="btn btn-xs btn-warning"><span class="fa fa-edit">Editer</span></a>
-        <a href="#" class="btn btn-xs btn-danger"><span class="fa fa-close">Supprimer</span></a>
-      <td>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>DOB</th>
+      <th>biography</th>
+      <th>Note presse</th>
+      <th>Portrait</th>
+    </tr>
+  </thead>
 
+  <tbody>
+  @foreach($directors as $key => $director)
+    <tr>
+      <td><a href="#">{{$director->id}}</a></td>
+      <td><h4><a>{{$director->lastname}}</a></h4></td>
+      <td><h4><a>{{$director->firstname}}</a></h4></td>
+      <td><h4><a>{{$director->dob}}</a></h4></td>
+      <td style="word-break: break-all"><p><i>{{strip_tags($director->biography)}}</i></td>
+      <td><a href="#">{{$director->note}}</a></td>
+      <td><img class="col-md-4 img-responsive img-thumbnail" src="{{$director->image}}" /></td>
 
     </tr>
   @endforeach
-  </tbody
+</tbody>
 </table>
-
+@endsection
 @section('arianne')
 @parent
-  <li><a href="{{route('movies.index')}}">index</a></li>
+  <li><a href="{{route('directors.index')}}">Liste de mes actors</a></li>
 @endsection

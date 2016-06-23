@@ -2,10 +2,14 @@
 
 @section('content')
 <h1> <small>Liste de mes films</small></h1>
+@if(session('success'))
+    <div class="alert alert-success">
+      {{session('success')}}
+    </div>
+@endif
 
 
-
-<table class="table">
+<table class="table table-responsive table-bordered table-striped">
   <tbody>
   @foreach($movies as $key => $movie)
     <tr>
@@ -22,8 +26,10 @@
 
     </tr>
   @endforeach
-  </tbody
+  </tbody>
 </table>
+
+@endsection
 
 @section('arianne')
 @parent

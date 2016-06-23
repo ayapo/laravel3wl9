@@ -74,6 +74,10 @@ Route::group([
       'as' => 'categories.creer',
       'uses' => 'CategoriesController@creer'
     ]);
+
+    //Route post pour store categories
+    Route::post('/store',['as'=> 'categories.store', 'uses'=>'CategoriesController@store']);
+
     Route::get('/editer', [
       'as' => 'categories.editer',
       'uses' => 'CategoriesController@editer'
@@ -93,6 +97,10 @@ Route::group([
        'as' => 'actors.creer',
        'uses' => 'ActorsController@creer'
      ]);
+
+     //Route post pour store Actors
+     Route::post('/store',['as'=> 'actors.store', 'uses'=>'ActorsController@store']);
+
      Route::get('/editer', [
        'as' => 'actors.editer',
        'uses' => 'ActorsController@editer'
@@ -113,6 +121,10 @@ Route::group([
         'as' => 'directors.creer',
         'uses' => 'DirectorsController@creer'
       ]);
+
+      //Route post pour store directors
+      Route::post('/store',['as'=> 'directors.store', 'uses'=>'DirectorsController@store']);
+
       Route::get('/editer', [
         'as' => 'directors.editer',
         'uses' => 'DirectorsController@editer'

@@ -39,7 +39,10 @@
             <li class="list-group-item list-group-item-success"><a href= "{{route('movies.index')}}"class="list-group-item"> Ajout de film</a></li>
             <li class="list-group-item list-group-item-success"><a href= "{{route('categories.index')}}"class="list-group-item">Ajout de catégories</a></li>
             <li class="list-group-item list-group-item-success"><a href="{{route('actors.index')}}" class="list-group-item">Ajout d'Acteur</a></li>
-            <li class="list-group-item list-group-item-success"><a href="{{route('movies.creer')}}" class="list-group-item">Creer</a></li>
+            <li class="list-group-item list-group-item-success"><a href="{{route('movies.creer')}}" class="list-group-item">Formulaire ajout films</a></li>
+            <li class="list-group-item list-group-item-success"><a href="{{route('actors.creer')}}" class="list-group-item">Formulaire ajout acteurs</a></li>
+            <li class="list-group-item list-group-item-success"><a href="{{route('directors.creer')}}" class="list-group-item">Formulaire ajout réalisateurs</a></li>
+            <li class="list-group-item list-group-item-success"><a href="{{route('categories.creer')}}" class="list-group-item">Formulaire ajout catégories</a></li>
             <li class="list-group-item list-group-item-success"><a href="{{route ('movies.voir') }}" class="list-group-item">Ajout de réalisateurs</a></li>
               <li role="separator" class="divider"></li>
             <li class="list-group-item list-group-item-warning"><a href="#" class="list-group-item"><i class="glyphicon glyphicon-zoom-in"></i> recherche avancée</a></li>

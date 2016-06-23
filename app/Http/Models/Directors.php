@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use DB;
 use Illuminate\Http\Request;
 
-Class Actors extends Model {
+Class Directors extends Model {
 
-  protected $table ='actors';
+  protected $table ='directors';
 
-  public static function allActors(){
+  public static function allDirectors(){
 
-    $resultat=DB::table('actors')->get();
+    $resultat=DB::table('directors')->get();
     return $resultat;
   }
   /**
@@ -21,7 +21,7 @@ Class Actors extends Model {
      */
     public static function storeData(Request $request){
       // Insert permet d'insérer un table
-      DB::table('actors')->insert(
+      DB::table('directors')->insert(
         [
           'id'           => $request->id,
           'firstname'    => $request->firstname,
@@ -29,7 +29,7 @@ Class Actors extends Model {
           'dob'          => $request->dob,
           'image'        => $request->image,
           'biography'    => $request->biography,
-          'recompenses'  => $request->note
+          'note'         => $request->note_presse
         ]
       );
     }

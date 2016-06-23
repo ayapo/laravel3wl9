@@ -29,6 +29,7 @@ public static function storeData(Request $request){
     'languages'    =>$request->langues,
     'budget'       =>$request->budget,
     'bo'           =>$request->bo,
+    'duree'        =>$request->duree,
     'image'        =>$request->image
       ]
     );
